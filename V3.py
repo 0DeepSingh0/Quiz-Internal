@@ -7,26 +7,27 @@ name = input("Enter a username: ")
 print()
 time.sleep(1)
 
-#This code welcomes the user
-print(f"Hello {name} Welcome to my Quiz about the movie Whale Rider")
+# Welcome message
+print(f"Hello {name}! Welcome to my Quiz about the movie Whale Rider")
 print()
 
 # List of questions, options, and correct answers
 questions = [
-    "Where was the movie Whale rider filmed?",
+    "Where was the movie Whale Rider filmed?",
     "What year did they start making the movie?",
     "What year was the movie Whale Rider made?",
     "Who directed the movie?",
     "Who was the author of this movie?",
-    "Was Whale rider based on a novel?",
+    "Was Whale Rider based on a novel?",
 ]
-# Answers to each questions 
-options = [   
+
+# Answers to each question
+options = [
     ["A. New Zealand", "B. Australia", "C. Tonga", "D. Samoa"],
     ["A. 2001", "B. 2002", "C. 1998", "D. 2007"],
     ["A. 2002", "B. 2003", "C. 1999", "D. 2008"],
-    ["A. Niki Caro", "B. Witi Ihimaera", "C. Keisha Castles", "D. Paikea Apirana"],
-    ["A. Niki Caro", "B. Witi Ihimaera", "C. Keisha Castles", "D. Paikea Apirana"],
+    ["A. Niki Caro", "B. Witi Ihimaera", "C. Keisha Castle-Hughes", "D. Paikea Apirana"],
+    ["A. Niki Caro", "B. Witi Ihimaera", "C. Keisha Castle-Hughes", "D. Paikea Apirana"],
     ["A. True", "B. False", "C. Maybe", "D. I don't know"]
 ]
 
@@ -34,14 +35,20 @@ answers = ["A", "B", "B", "A", "B", "A"]
 
 # Loop through each question, options, and check answers
 for i in range(len(questions)):
-    # Display the questions and options
-    print(f"Question {i+1}: {questions[i]}")
+    # Display the question
+    print(f"Question {i + 1}: {questions[i]}")
 
+    # Display options
     for option in options[i]:
         print(option)
 
-   
-    user_answer = input("Enter your answer (A/B/C/D): ").upper()
+    # Validate user input for answer
+    while True:
+        user_answer = input("Enter your answer (A/B/C/D): ").strip().upper()
+        if user_answer in ['A', 'B', 'C', 'D']:
+            break
+        else:
+            print("Invalid input! Please enter A, B, C, or D.")
 
     # Check if the answer is correct
     if user_answer == answers[i]:
@@ -50,9 +57,7 @@ for i in range(len(questions)):
     else:
         print("Incorrect!")
 
-    print()  
+    print()
 
 # Display user's final score
 print(f"Your final score is {score}/{len(questions)}")
-
-
