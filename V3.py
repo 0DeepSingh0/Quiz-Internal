@@ -59,5 +59,20 @@ for i in range(len(questions)):
 
     print()
 
-# Display user's final score
+# Determine grade based on score
+percentage = (score / len(questions)) * 100
+
+if percentage >= 100:
+    grade = "A"
+elif percentage >= 80:
+    grade = "B"
+elif percentage >= 60:
+    grade = "C"
+elif percentage >= 40:
+    grade = "D"
+else:
+    grade = "F"
+
+# Display user's final score and grade
 print(f"Your final score is {score}/{len(questions)}")
+print(f"You earned a grade {grade}")
