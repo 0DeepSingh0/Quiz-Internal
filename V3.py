@@ -62,7 +62,7 @@ for i in range(len(questions)):
 # Determine grade based on score
 percentage = (score / len(questions)) * 100
 
-if percentage >= 100:
+if percentage == 100:
     grade = "A"
 elif percentage >= 80:
     grade = "B"
